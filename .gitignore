@@ -19,3 +19,11 @@ Thumbs.db
 # Scripts/build temporales
 build-elementor-home.py
 __pycache__/
+
+# WordPress plugins y temas padre gestionados por el Dockerfile
+wp-content/plugins/*
+wp-content/themes/*
+!wp-content/themes/urbanfit-child
+
+# Capturas locales de debug
+screenshot-railway-*.png
