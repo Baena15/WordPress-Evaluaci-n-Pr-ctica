@@ -39,6 +39,10 @@ if wp core is-installed --allow-root >/dev/null 2>&1 && [ -n "${RAILWAY_PUBLIC_D
     echo "Refrescando permalinks y caché"
     wp rewrite flush --allow-root
     wp cache flush --allow-root
+
+    echo "Limpiando caché de Yoast SEO"
+    TABLE_PREFIX=$(wp db prefix --allow-root)
+    wp db query "TRUNCATE TABLE ${TABLE_PREFIX}yoast_indexable" --allow-root || true
 fi
 
 # Mantiene Apache en primer plano para que el contenedor siga vivo.
