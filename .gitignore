@@ -26,4 +26,4 @@ wp-content/themes/*
 !wp-content/themes/urbanfit-child
 
 # Capturas locales de debug
-screenshot-railway-*.png
+screenshot-*.png

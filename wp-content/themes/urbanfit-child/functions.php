@@ -1,7 +1,11 @@
 <?php
 add_action( 'wp_enqueue_scripts', function() {
-    wp_enqueue_style( 'urbanfit-parent-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'urbanfit-child-style', get_stylesheet_uri(), array('urbanfit-parent-style') );
+    $parent_style = 'urbanfit-parent-style';
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), null );
+
+    $child_css = get_stylesheet_directory() . '/style.css';
+    $child_ver = file_exists( $child_css ) ? filemtime( $child_css ) : '1.0.0';
+    wp_enqueue_style( 'urbanfit-child-style', get_stylesheet_uri(), array( $parent_style ), $child_ver );
 } );
 
 /**
