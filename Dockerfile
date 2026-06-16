@@ -8,5 +8,8 @@ RUN apt-get update && \
     chmod +x wp-cli.phar && \
     mv wp-cli.phar /usr/local/bin/wp
 
+# Copiar tema hijo personalizado
+COPY wp-content/themes/urbanfit-child /var/www/html/wp-content/themes/urbanfit-child
+
 # Exponer el puerto 80 (Railway detectará esto automáticamente)
 EXPOSE 80

@@ -15,3 +15,7 @@ Thumbs.db
 # IDEs
 .vscode/
 .idea/
+
+# Scripts/build temporales
+build-elementor-home.py
+elementor-home.json
