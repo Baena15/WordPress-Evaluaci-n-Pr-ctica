@@ -18,3 +18,4 @@ Thumbs.db
 
 # Scripts/build temporales
 build-elementor-home.py
+__pycache__/
