@@ -1,0 +1,17 @@
+# Variables de entorno
+.env
+
+# Datos locales de Docker
+volumes/
+*.sql
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
