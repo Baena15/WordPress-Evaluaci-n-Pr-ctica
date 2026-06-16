@@ -15,5 +15,10 @@ RUN apt-get update && \
 COPY wp-content/themes/urbanfit-child /var/www/html/wp-content/themes/urbanfit-child
 COPY assets /var/www/html/assets
 
+# Entrypoint personalizado para evitar conflicto de MPM en Railway V2
+COPY entrypoint.sh /usr/local/bin/urbanfit-entrypoint.sh
+RUN chmod +x /usr/local/bin/urbanfit-entrypoint.sh
+ENTRYPOINT ["urbanfit-entrypoint.sh"]
+
 # Exponer el puerto 80 (Railway detectará esto automáticamente)
 EXPOSE 80
