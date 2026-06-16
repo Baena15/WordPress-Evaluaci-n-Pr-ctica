@@ -1,5 +1,8 @@
 FROM wordpress:php8.3-apache
 
+# Corregir MPM de Apache ( Railway / imagen base carga mpm_event y mpm_prefork )
+RUN a2dismod mpm_event && a2enmod mpm_prefork
+
 # Instalar WP-CLI para gestión automatizada de plugins/temas
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl && \
